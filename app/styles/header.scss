@@ -1,0 +1,111 @@
+@import "variables.scss";
+
+
+header {
+    background: white;
+    margin: 0 0 ;
+
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 20px 0 0;
+
+        a.branding {
+            flex:1 auto 0;
+            font-size: 3em;
+
+
+
+        }
+
+
+        a#menu_button {
+            display: block;
+            background: url('../images/menu.svg') no-repeat center center;
+            background-size: 30px;
+            text-indent: -9999px;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top:35px;
+            right: 20px;
+            z-index: 100;
+
+            @media (min-width: $mobile_width) {
+                display: none;
+            }
+        }
+
+
+        ul#menu_navigation {
+            display: block;
+            flex:1 auto 0;
+            transition: all 0.3s;
+            margin: 0;
+            padding: 80px 0 0 ;
+            position: fixed;
+            z-index: 1000;
+            top:0;
+            height: 100%;
+            right:0;
+            background: transparentize($brand_color, 0.2);
+            width:250px;
+            text-align: right;
+            transform: translateX(250px);
+
+            @media (min-width: $mobile_width) {
+
+                position: relative;
+                height: auto;
+                background:none;
+                width: 100%;
+                padding: 0;
+                transform: none;
+                top:6px;
+            }
+
+
+            &.show_menu {
+                transform: translateX(0px);
+            }
+
+            li {
+                display: block;
+                margin: 0;
+                padding: 0;
+                cursor: pointer;
+
+                @media (min-width: $mobile_width) {
+                    display: inline-block;
+                }
+
+
+                a {
+                    display: block;
+                    padding: 10px 10px;
+                    border-radius: 5px  5px 0 0;
+                    &:link, &:active, &:hover, &:visited {
+                        color: white;
+                        border: 0;
+
+                        @media (min-width: $mobile_width) {
+                            color: $brand_color;
+                        }
+                    }
+                    &:hover {
+                        background: transparentize(darken($brand_color, 20), 0.6);
+                    }
+
+
+                    @media (min-width: $mobile_width) {
+                            display: inline-block;
+                    }
+
+                }
+
+            }
+        }
+    }
+}
