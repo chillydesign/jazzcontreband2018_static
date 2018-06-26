@@ -159,6 +159,7 @@ section  {
 
 
 #featured_event {
+    margin: 130px 0 40px;
     #featured_banner {
         background: $blue;
         color: white;
@@ -169,11 +170,23 @@ section  {
     }
     #featured_image {
         width: 55%;
-                padding: 30px 0;
+            padding: 30px 0;
     }
     #featured_text {
         width: 40%;
-        padding: 30px 0;
+        padding: 35px 0 0;
+    }
+
+    span.drop_cap {
+        font-size: 3em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 7px 5px 0px 0;
+        display: inline-block;
+    }
+    p.meta {
+        color: $medium_grey;
+        font-style: italic;
     }
 }
 
@@ -190,13 +203,13 @@ section  {
 
 #rotated_warning_line {
     background: url('../images/warning_line.svg') repeat-x top center;
-    background-size: 62px 52px;
+    background-size: 124px 80px;
     width: 300%;
-    height: 62px;
+    height: 124px;
     transform: rotate(-20deg);
-     left: -500px;
-     top:40%;
-     position: absolute;
+    left: -500px;
+    top:40%;
+    position: absolute;
 
 
 }
