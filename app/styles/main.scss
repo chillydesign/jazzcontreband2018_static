@@ -27,3 +27,176 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
 }
+
+
+.branding {
+    padding: 0px 0 ;
+    height: 400px;
+    position: relative;
+    text-align: center;
+
+
+    span {
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+        width: 400px;
+        height: 150px;
+        text-indent: -9999px;
+        position: absolute;
+        top:0;
+        z-index: 1;
+        &.logo_jazz {
+            background-image:  url('../images/jazz.svg');
+            height: 250px;
+        }
+        &.logo_contre {
+            background-image:  url('../images/contre.svg');
+            top: 180px;
+            z-index: 2;
+            left: -100px;
+        }
+        &.logo_band {
+            background-image:  url('../images/band.svg');
+            top:230px;
+            z-index: 3;
+            left: 60px;
+        }
+    }
+}
+
+.date_box {
+    background: $yellow;
+    padding: 10px 50px 50px 10px;
+    color: $black;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 1;
+    text-align: left;
+}
+
+
+
+$road_sign_size: 200px;
+#road_sign {
+    display: block;
+    background: url('../images/road_sign.svg') no-repeat center center;
+    background-size: cover;
+    height: $road_sign_size;
+    width: $road_sign_size;
+    position: absolute;
+    bottom:100px;
+    right: 70px;
+    z-index: 3;
+}
+$octagon_size: 150px;
+#octagon {
+    display: block;
+    background: url('../images/octagon.svg') no-repeat center center;
+    background-size: cover;
+    height: $octagon_size;
+    width: $octagon_size;
+    position: absolute;
+    bottom:20px;
+    left: 130px;
+    z-index: 30;
+}
+
+
+
+
+section  {
+    img {
+        width: 100%;
+        height: auto;
+        margin: 0 0 30px;
+    }
+    margin: 0 0 50px;
+}
+
+
+#about_jazzcontreband {
+    padding: 20px 50px;
+    background: $green;
+    color: white;
+    position: relative;
+    top: -150px;
+
+    @media (min-width: $mobile_width) {
+        width: 55%;
+    }
+
+    h2, h3 {
+        color: white;
+    }
+    .big_info {
+        text-align: center;
+        font-size: $font_size;
+        letter-spacing: 3px;
+        span {
+            font-size: 6em;
+            display: block;
+            font-weight: bold;
+            line-height: 0.9    ;
+            letter-spacing: 0;
+        }
+    }
+}
+
+#agenda_front {
+    padding: 20px 50px;
+    margin: -30px 0 0;
+    position: relative;
+    z-index: 10;
+    background: $yellow;
+    color: $black;
+    @media (min-width: $mobile_width) {
+        width: 40%;
+    }
+}
+
+
+#featured_event {
+    #featured_banner {
+        background: $blue;
+        color: white;
+        padding: 30px 0;
+        h2 {
+            padding: 0;
+        }
+    }
+    #featured_image {
+        width: 55%;
+                padding: 30px 0;
+    }
+    #featured_text {
+        width: 40%;
+        padding: 30px 0;
+    }
+}
+
+
+#rotated_warning_line_container {
+    overflow-x: hidden;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#rotated_warning_line {
+    background: url('../images/warning_line.svg') repeat-x top center;
+    background-size: 62px 52px;
+    width: 300%;
+    height: 62px;
+    transform: rotate(-20deg);
+     left: -500px;
+     top:40%;
+     position: absolute;
+
+
+}
