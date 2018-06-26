@@ -4,8 +4,8 @@
 
 h1,h2,h3,h4,h5,h6 {
     font-family: $heading_font_stack;
-    line-height: 110%;
-    color: $brand_color;
+    line-height: 120%;
+
 }
 
 h1 {
@@ -19,6 +19,7 @@ h2 {
     font-size: 3em;
     padding: 0 0 20px;
     font-weight: bold;
+
 
         @media (min-width: $mobile_width) {
             font-size: 3.5em;
@@ -41,14 +42,15 @@ h4 {
 
 p {
     font-size: $font_size;
-    line-height: 150%;
-    padding: 0 0 10px;
+    line-height: 160%;
+    padding: 0 0 30px;
     margin:0;
 }
 
 li {
     font-size: $font_size;
     padding:0 0 5px;
+    line-height: 160%;
 }
 
 dd, dt {
@@ -127,7 +129,18 @@ input {
 
 }
 
+hr {
+    appearance: none;
+    border:0;
+    border-bottom: 3px solid $yellow;
+    margin: 20px 0;
+    padding: 0;
 
+    &.hr_blue { border-bottom-color: $blue; }
+    &.hr_green { border-bottom-color: $green; }
+    &.hr_yellow { border-bottom-color: $yellow; }
+    &.hr_black { border-bottom-color: $black; }
+}
 
 
 cite {
