@@ -5,6 +5,11 @@
 h1,h2,h3,h4,h5,h6 {
     font-family: $heading_font_stack;
     line-height: 120%;
+    word-break:break-word;
+
+    @media (min-width: $mobile_width) {
+        word-break:normal;
+    }
 
 }
 
@@ -16,14 +21,14 @@ h1 {
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 2.8em;
     padding: 0 0 20px;
     font-weight: bold;
 
 
-        @media (min-width: $mobile_width) {
-            font-size: 3.5em;
-        }
+    @media (min-width: $mobile_width) {
+        font-size: 3.5em;
+    }
 
 
 }
@@ -151,15 +156,20 @@ cite {
 }
 
 h6 a, a h6 {
-  font-size: 21px;
-  background: $blue;
-  padding: 20px 40px;
-  color: white;
-  margin-top: 10px;
-  display: inline-block;
-  cursor: pointer;
-  &:hover{
-    color:white;
-    background: darken($blue, 10);
-  }
+    font-size: 21px;
+    background: $blue;
+    padding: 20px 40px;
+    color: white;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+    line-height: 1;
+    @media (min-width: $mobile_width) {
+        display: inline-block;
+    }
+
+    &:hover{
+        color:white;
+        background: darken($blue, 10);
+    }
 }

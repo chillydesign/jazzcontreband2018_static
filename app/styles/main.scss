@@ -13,7 +13,7 @@
 
 
 @media (min-width: $mobile_width) { }
-@media (min-width: 992px) { }
+@media (min-width: $tablet_width) { }
 @media (min-width: 1200px) { }
 
 
@@ -30,7 +30,8 @@ body {
 
 
 .branding {
-    padding: 0px 0 ;
+    padding: 0px 0;
+    margin: 0 0 30px;
     height: 400px;
     position: relative;
     text-align: center;
@@ -41,69 +42,44 @@ body {
         background-repeat: no-repeat;
         background-size: contain;
         background-position: top center;
-        width: 400px;
+        width: 100%;
         height: 150px;
         text-indent: -9999px;
-        position: absolute;
+        position: relative;
         top:0;
         z-index: 1;
+
+        @media (min-width: $mobile_width) {
+            width: 400px;
+            position: absolute;
+        }
+
         &.logo_jazz {
             background-image:  url('../images/jazz.svg');
             height: 250px;
         }
         &.logo_contre {
             background-image:  url('../images/contre.svg');
-            top: 180px;
+            top: -70px;
             z-index: 2;
-            left: -100px;
+            @media (min-width: $mobile_width) {
+                left: -100px;
+                top: 180px;
+            }
         }
         &.logo_band {
             background-image:  url('../images/band.svg');
-            top:230px;
+            top: -100px;
             z-index: 3;
-            left: 60px;
+
+            @media (min-width: $mobile_width) {
+                top: 230px;
+                left: 60px;
+            }
         }
+
     }
 }
-
-.date_box {
-    background: $yellow;
-    padding: 10px 50px 50px 10px;
-    color: $black;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 4em;
-    line-height: 1;
-    text-align: left;
-}
-
-
-
-$road_sign_size: 200px;
-#road_sign {
-    display: block;
-    background: url('../images/road_sign.svg') no-repeat center center;
-    background-size: cover;
-    height: $road_sign_size;
-    width: $road_sign_size;
-    position: absolute;
-    bottom:100px;
-    right: 70px;
-    z-index: 3;
-}
-$octagon_size: 150px;
-#octagon {
-    display: block;
-    background: url('../images/octagon.svg') no-repeat center center;
-    background-size: cover;
-    height: $octagon_size;
-    width: $octagon_size;
-    position: absolute;
-    bottom:20px;
-    left: 130px;
-    z-index: 30;
-}
-
 
 
 
@@ -122,38 +98,54 @@ section  {
     background: $green;
     color: white;
     position: relative;
-    top: -150px;
+    top: -20px;
 
     @media (min-width: $mobile_width) {
         width: 55%;
+        top: -150px;
     }
 
     h2, h3 {
         color: white;
     }
+
+    #big_infos {
+        flex-direction: row;
+    }
     .big_info {
         text-align: center;
-        font-size: $font_size;
+        font-size: #{$font_size * 0.8};
         letter-spacing: 3px;
+        margin: 0 0 20px;
+        @media (min-width: $mobile_width) {
+            font-size: $font_size;
+        }
         span {
-            font-size: 6em;
+            font-size: 4em;
             display: block;
             font-weight: bold;
-            line-height: 0.9    ;
+            line-height: 0.9;
             letter-spacing: 0;
+            @media (min-width: $mobile_width) {
+                font-size: 5em;
+            }
+            @media (min-width: $tablet_width) {
+                font-size: 6em;
+            }
         }
     }
 }
 
 #agenda_front {
     padding: 20px 50px;
-    margin: -30px 0 0;
+
     position: relative;
     z-index: 10;
     background: $yellow;
     color: $black;
     @media (min-width: $mobile_width) {
         width: 40%;
+        margin: -30px 0 0;
     }
 }
 
@@ -163,18 +155,29 @@ section  {
     #featured_banner {
         background: $blue;
         color: white;
-        padding: 30px 0;
+        padding: 30px 0 80px;
+        @media (min-width: $mobile_width) {
+            padding: 30px 0;
+        }
         h2 {
             padding: 0;
         }
     }
     #featured_image {
-        width: 55%;
+        padding: 30px 0 0px;
+        margin: -70px 0 0 ;
+        @media (min-width: $mobile_width) {
+            width: 55%;
             padding: 30px 0;
+            margin: 0;
+        }
     }
     #featured_text {
-        width: 40%;
-        padding: 35px 0 0;
+
+        @media (min-width: $mobile_width) {
+            width: 40%;
+            padding: 35px 0 0;
+        }
     }
 
     span.drop_cap {
@@ -183,6 +186,7 @@ section  {
         text-transform: uppercase;
         margin: 7px 5px 0px 0;
         display: inline-block;
+        line-height: 1;
     }
     p.meta {
         color: $medium_grey;
@@ -215,19 +219,21 @@ section  {
 }
 
 .upcoming_event {
-  h6 {
-    font-size: 5em;
-    padding: 0;
-    text-transform: uppercase;
-    margin-top: -10px;
-  }
-  p{padding-bottom: 0;}
-  h5 {
-    font-size: 2.5em;
-    padding: 0;
-    text-transform: uppercase;
-  }
+    h6 {
+        font-size: 5em;
+        padding: 0;
+        text-transform: uppercase;
+        margin-top: -10px;
+    }
+    p{
+        padding-bottom: 0;
+    }
+    h5 {
+        font-size: 2.5em;
+        padding: 0;
+        text-transform: uppercase;
+    }
 
-  &.blue {color: $blue;}
-  &.green {color: $green;}
+    &.blue { color: $blue; }
+    &.green { color: $green; }
 }

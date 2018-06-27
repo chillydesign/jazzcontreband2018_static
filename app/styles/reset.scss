@@ -64,6 +64,7 @@ table {	border-collapse: collapse;	border-spacing: 0}
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: top;
+    flex-direction: column;
 
     &.column_container_reversed {
         flex-direction: row-reverse;
@@ -71,6 +72,7 @@ table {	border-collapse: collapse;	border-spacing: 0}
 
     @media (min-width: $mobile_width) {
         flex-wrap: nowrap;
+        flex-direction: row;
     }
 }
 .column {
