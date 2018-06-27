@@ -208,8 +208,26 @@ section  {
     height: 124px;
     transform: rotate(-20deg);
     left: -500px;
-    top:40%;
+    top:30%;
     position: absolute;
 
 
+}
+
+.upcoming_event {
+  h6 {
+    font-size: 5em;
+    padding: 0;
+    text-transform: uppercase;
+    margin-top: -10px;
+  }
+  p{padding-bottom: 0;}
+  h5 {
+    font-size: 2.5em;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  &.blue {color: $blue;}
+  &.green {color: $green;}
 }

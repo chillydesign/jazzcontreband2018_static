@@ -38,6 +38,7 @@ h3 {
 h4 {
     font-size: 2em;
     padding: 0 0 20px;
+    text-transform: uppercase;
 }
 
 p {
@@ -147,4 +148,18 @@ cite {
 
     color: $medium_grey;
     font-size: #{$font_size * 0.8};
+}
+
+h6 a, a h6 {
+  font-size: 21px;
+  background: $blue;
+  padding: 20px 40px;
+  color: white;
+  margin-top: 10px;
+  display: inline-block;
+  cursor: pointer;
+  &:hover{
+    color:white;
+    background: darken($blue, 10);
+  }
 }
